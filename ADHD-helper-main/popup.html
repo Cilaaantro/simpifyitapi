@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimplifyIt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="title-container">
+      <img src="images/fox.png" alt="Fox Logo" class="fox-logo">
+      <h1 class="simplifyit-title">SimplifyIt</h1>
+    </div>
+    <div class="feature-section">
+      <button id="summarize-btn" class="action-button">Summarize Page</button>
+      <button id="youtube-action-btn" class="action-button">YouTube Action</button>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Summarizing...</p>
+      </div>
+      <div id="youtube-loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Processing YouTube transcript...</p>
+      </div>
+      <div id="youtube-result-container" class="result-container hidden">
+        <div class="heading-container">
+          <h2 class="simplifyit-title2">YouTube Summary</h2>
+        </div>
+        <div id="youtube-result-content"></div>
+      </div>
+      <div id="summary-container" class="result-container hidden">
+        <div class="heading-container">
+          <h2 class="simplifyit-title2">Summary</h2>
+        </div>
+        <div id="summary-content"></div>
+      </div>
+      <div id="error-container" class="error-message hidden">
+        <p id="error-text"></p>
+      </div>
+    </div>
+    
+    <div class="feature-section reading-features">
+      <div class="heading-container">
+        <h2 class="simplifyit-title2">Reading Features</h2>
+      </div>
+      
+      <div class="option-group">
+        <label for="font-selector">Font Type:</label>
+        <select id="font-selector" class="select-control">
+          <option value="default">Default</option>
+          <option value="opendyslexic">OpenDyslexic</option>
+          <option value="comic-sans">Comic Sans MS</option>
+          <option value="arial">Arial</option>
+          <option value="verdana">Verdana</option>
+        </select>
+      </div>
+      
+      <div class="option-group">
+        <label for="font-size">Font Size: <span class="emoji-label">📏</span></label>
+        <div class="range-control-container">
+          <input type="range" id="font-size" min="0" max="100" value="50" class="range-control">
+          <span id="font-size-value">50%</span>
+        </div>
+      </div>
+      
+      <div class="option-group">
+        <label for="letter-spacing">Letter Spacing: <span class="emoji-label">↔️</span></label>
+        <div class="range-control-container">
+          <input type="range" id="letter-spacing" min="0" max="10" value="0" class="range-control">
+          <span id="letter-spacing-value">0px</span>
+        </div>
+      </div>
+      
+      <div class="option-group">
+        <label for="line-height">Line Height: <span class="emoji-label">↕️</span></label>
+        <div class="range-control-container">
+          <input type="range" id="line-height" min="0" max="100" value="50" class="range-control">
+          <span id="line-height-value">50%</span>
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <button id="reset-reading-settings" class="reset-button">Reset</button>
+        <button id="apply-reading-settings" class="action-button">Apply Settings</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 

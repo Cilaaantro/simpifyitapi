@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "SimplifyIt - ADHD & Dyslexia Helper",
+  "version": "1.0.0",
+  "description": "A Chrome extension to help users with ADHD, dyslexia, and other learning differences",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "icons": {
+    "16": "images/fox.png",
+    "48": "images/fox.png",
+    "128": "images/fox.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SimplifyIt",
+    "default_icon": {
+      "16": "images/fox.png",
+      "48": "images/fox.png",
+      "128": "images/fox.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+} 
